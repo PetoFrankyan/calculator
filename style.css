@@ -1,0 +1,101 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator{
+  background-color: black;
+  width: 100%;
+  max-width: 350px;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.display{
+  min-height: 200px;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: rgb(222, 222, 222);
+  text-align: right;
+  flex: 1 1 0%;
+}
+
+.display .input {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.display .output{
+  font-size: 42px;
+  font-weight: 700;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.display .operator{
+  color: orange
+}
+
+.display .brackets,
+.display .precent{
+  color: darkcyan;
+}
+
+.keys {
+  background-color: rgb(10, 10, 10);
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 1rem;
+}
+
+.keys .key {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  height: 0px;
+  padding-top: 100%;
+  background-color: rgb(20, 20, 20);
+  transition: 0.2s;
+  user-select: none;
+}
+
+.equal{
+  grid-column: 4;
+}
+
+.keys .key span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(222, 222, 222);
+}
+
+.keys .key:hover{
+  background-color: rgb(15, 15, 15)
+}
+
+.keys .key.operator span {
+  color: orange
+}
+
+.keys .key.action span {
+  color: darkcyan;
+}
